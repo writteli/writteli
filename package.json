@@ -1,0 +1,36 @@
+{
+  "name": "writte.li-beta",
+  "version": "1.0.0",
+  "description": "fork-to-use version of writte.li",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaszkups/writte.li-beta.git"
+  },
+  "keywords": [
+    "static",
+    "site",
+    "generator",
+    "static",
+    "static",
+    "site",
+    "generator"
+  ],
+  "author": "lukaszkups",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukaszkups/writte.li-beta/issues"
+  },
+  "homepage": "https://github.com/lukaszkups/writte.li-beta#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "showdown": "^1.9.0",
+    "uglify-es": "^3.3.9"
+  }
+}
