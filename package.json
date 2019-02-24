@@ -26,9 +26,9 @@
   "author": "lukaszkups",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lukaszkups/writte.li-beta/issues"
+    "url": "https://github.com/lukaszkups/writteli/issues"
   },
-  "homepage": "https://github.com/lukaszkups/writte.li-beta#readme",
+  "homepage": "https://github.com/lukaszkups/writteli#readme",
   "dependencies": {
     "fs-extra": "^7.0.1",
     "ftp-deploy": "^2.3.1",
