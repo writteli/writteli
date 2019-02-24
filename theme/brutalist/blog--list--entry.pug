@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  article
+    h1 #{title}
+    p Published at #{date}
+    div !{content}
+    div
+      p Categories:
+        each category in meta.category.split(', ')
+          - const cat = category.toLowerCase()
+          - const url = `/blog/?category=${cat}`
+          a(href=url, class='category-link') #{cat}
+      p Tags:
+        each tag in meta.tags.split(', ')
+          - const tagg = tag.toLowerCase()
+          - const url = `/blog/?tag=${tagg}`
+          a(href=url, class='category-link') #{tagg}

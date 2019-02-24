@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  article !{content}
+    ul.blog-list
+      each item, index in list.length ? list : ['No entries yet.']
+        li
+          a(href=item.url) <span>#{item.meta.date}</span> - #{item.meta.title}
+
+      if paginationLinks && paginationLinks.length
+        ul#pagination.pagination
+          each item, index in paginationLinks
+            li
+              - pageNumber = index + 1
+              - paginationClass = pageNumber === currentPage ? 'current-page' : ''
+              a(href=item, class=paginationClass) #{pageNumber}

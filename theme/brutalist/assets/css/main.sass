@@ -1,0 +1,93 @@
+$white: #f1f1f1
+$black: #0f0f0f
+
+html,
+body
+  background: $white
+  color: $black
+  font-family: monospace
+  margin: 0
+  padding: 0
+
+article,
+footer,
+nav
+  display: block
+  margin: 0 auto
+  max-width: 600px
+  width: 85%
+
+.logo
+  background: url('/assets/img/writteli-home-logo.png') no-repeat
+  display: block
+  height: 300px
+  width: 300px
+  margin: 0 auto
+
+article
+  min-height: 50vh
+
+  img
+    display: block
+    margin: 10px auto
+
+nav
+  ul
+    display: block
+    list-style-type: none
+    margin: 10px 0
+    padding: 0
+
+    li
+      display: inline-block
+      margin: 0 10px 0 0
+
+      a
+        background: $black
+        color: $white
+        display: block
+        padding: 5px
+
+.blog-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+  li
+    display: block
+    margin: 10px 0
+    padding: 0
+
+    a
+      background: $black
+      color: $white
+      display: inline-block
+      padding: 5px 10px
+
+.category-link,
+.tag-link
+  background: $black
+  color: $white
+  display: inline-block
+  padding: 5px
+  margin: 0 5px 0 0
+
+footer
+  margin: 20px auto
+
+  a
+    color: $black
+
+h1, h2, h3, h4
+  font-family: Courier New, Courier, monospace
+
+code
+  background: $black
+  color: $white
+  display: inline-block
+  line-height: calc(1em + 4px)
+  padding: 5px 2px
+
+pre
+  background: $black
+  padding: 0 5px

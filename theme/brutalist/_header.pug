@@ -1,0 +1,7 @@
+- var menu = [{id: 0, name: 'Home', url: '/'}, {id: 1, name: 'About', url: '/about'}, {id: 2, name: 'Blog', url: '/blog'}]
+header
+  nav
+    ul
+      each item in menu
+        li(class=meta.active == item.id ? 'active': '')
+          a(href=item.url) #{item.name}

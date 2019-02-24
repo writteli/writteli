@@ -1,14 +1,18 @@
 {
-  "name": "writte.li-beta",
+  "name": "writteli",
   "version": "1.0.0",
-  "description": "fork-to-use version of writte.li",
+  "description": "fork-to-use version of writteli",
   "main": "index.js",
   "scripts": {
+    "server": "node -e 'require(\"./index.js\").init()'",
+    "deploy": "node -e 'require(\"./index.js\").deploy()'",
+    "assets": "node -e 'require(\"./index.js\").assets()'",
+    "compile": "node -e 'require(\"./index.js\").once()'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukaszkups/writte.li-beta.git"
+    "url": "git+https://github.com/lukaszkups/writteli.git"
   },
   "keywords": [
     "static",
@@ -27,6 +31,7 @@
   "homepage": "https://github.com/lukaszkups/writte.li-beta#readme",
   "dependencies": {
     "fs-extra": "^7.0.1",
+    "ftp-deploy": "^2.3.1",
     "http-server": "^0.11.1",
     "node-sass": "^4.11.0",
     "pug": "^2.0.3",
