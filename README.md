@@ -84,7 +84,7 @@ This tool is devleoped and maintained under MIT License.
 
 - [brutalist](./themes/brutalist/)
 
-![img](./themes/brutalist/assets/img/home-screenshot.png)
+![img](https://raw.githubusercontent.com/lukaszkups/writteli/master/theme/brutalist/assets/img/home--screenshot.jpg?token=AQuB48s5Kq9qjqtylTqzuLmC9aRIv-Nqks5ce_yAwA%3D%3D)
 
 # Showcase
 
