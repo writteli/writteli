@@ -82,7 +82,7 @@ This tool is devleoped and maintained under MIT License.
 
 # Available themes
 
-- [brutalist](./themes/brutalist/)
+- [brutalist](https://github.com/lukaszkups/writteli/tree/master/theme/brutalist)
 
 # Showcase
 
