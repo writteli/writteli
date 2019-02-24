@@ -8,7 +8,7 @@ Writteli is a static site generator, build with [KISS](https://en.wikipedia.org/
 
 Because I can ;) To be honest, I was not satisfied with any available tools and while I was doing another redesign of my [website](https://lukaszkups.net) I decided to create an additional tooling as a side project.
 
-3. What technologies writteli supports?
+3. What technologies writteli use?
 
 Template language is [pug](https://pugjs.org), it supports ES6 JavaScript syntax as your website scripts and you can choose between traditional CSS, Sass or Sass with indented syntax.
 
@@ -79,6 +79,12 @@ Author of this tool is lukasz kups. You can reach me via [email](mailto:letstalk
 # License
 
 This tool is devleoped and maintained under MIT License.
+
+# Available themes
+
+- [brutalist](./themes/brutalist/)
+
+![img](./themes/brutalist/assets/img/home-screenshot.png)
 
 # Showcase
 
