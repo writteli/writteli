@@ -84,8 +84,6 @@ This tool is devleoped and maintained under MIT License.
 
 - [brutalist](./themes/brutalist/)
 
-![img](https://raw.githubusercontent.com/lukaszkups/writteli/master/theme/brutalist/assets/img/home--screenshot.jpg?token=AQuB48s5Kq9qjqtylTqzuLmC9aRIv-Nqks5ce_yAwA%3D%3D)
-
 # Showcase
 
 Websites that are built with writteli (feel free to commit yours!):
