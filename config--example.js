@@ -5,8 +5,6 @@ module.exports = {
   indentedSass: true, // keep true if you want write your stylesheets using indented Sass syntax
   ie8support: true, // keep true if you want to support IE8 when uglifying your website's JavaScript code
   vendorsPath: '', // if you use any 3rd party vendors and want to copy it in the final website output - set the path here
-  recompile: true, // keep true if you want your `npm run server` command to update the changes
-  recompileInterval: 5000, // interval of how often server should recompile the page in ms (best to keep it 5000+)
   rootFolder: 'home', // slug of the page/folder which should be served in your webpage output at `/` (home/index route)
   excludeDrafts: true, // set to true if you want to compile --list entries that are marked as 'draft'
   paginationSlug: 'page/', // what slug will have pagination - have to end with `/`

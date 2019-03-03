@@ -49,14 +49,14 @@ module.exports = {
   // method below source: https://geedew.com/remove-a-directory-that-is-not-empty-in-nodejs/
   deleteFolderRecursive: (url) => {
     if (fs.existsSync(url)) {
-      fs.readdirSync(url).forEach((file,index) => {
+      fs.readdirSync(url).forEach((file) => {
         var curPath = url + "/" + file
         if(fs.lstatSync(curPath).isDirectory()) { // recurse
           module.exports.deleteFolderRecursive(path.normalize(curPath))
         } else { // delete file
           fs.unlinkSync(curPath)
         }
-      });
+      })
       fs.rmdirSync(url)
     }
   },

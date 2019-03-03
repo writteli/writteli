@@ -4,6 +4,7 @@ const pug = require('pug')
 const CONFIG = require('./../config')
 const _helpers = require('./helpers')
 const path = require('path')
+const watch = require('node-watch')
 
 const _mdConverter = new showdown.Converter({metadata: true})
 _mdConverter.setFlavor('github')
@@ -389,48 +390,74 @@ module.exports = {
     })
   },
   compile: (_store) => {
-    module.exports.getAllContent(_store).then(store => {
-      module.exports.createOutputFolders(_store).then(() => {
-        module.exports.createOutputFiles(_store).then(() => {
-          module.exports.createListJsonFiles(_store).then(() => {
-            module.exports.moveRootFolder().then(() => {
-              console.log('Content compiled.')
-              if (CONFIG.recompile === true) {
-                setTimeout(() => {
-                  module.exports.compile(_store)
-                }, CONFIG.recompileInterval || 60000)
-              }
-            })
+    return module.exports.getAllContent(_store).then(() => {
+      return module.exports.createOutputFolders(_store).then(() => {
+        return module.exports.createOutputFiles(_store).then(() => {
+          return module.exports.createListJsonFiles(_store).then(() => {
+            return module.exports.moveRootFolder()
           })
         })
       })
     })
   },
   compileOnce: (_store) => {
-    CONFIG.recompile = false
     _helpers.deleteFolderRecursive('./output/') // empty output folder for new content
-
-    module.exports.compile(_store)
+    return module.exports.compile(_store)
   },
-  server: (_store) => {
-    CONFIG.recompile = true
-    _helpers.deleteFolderRecursive('./output/') // empty output folder for new content
-    module.exports.compile(_store)
+  watchForChanges: (_store) => {
     _helpers.startServer()
-  },
-  recompileAssets: (_store) => {
-    module.exports.prepareAssets(_store).then(() => {
-      setTimeout(() => {
-        module.exports.recompileAssets(_store)
-      }, CONFIG.recompileInterval || 60000)
-    })
-  },
-  // when working on theme - it recompiles static asset files only (not theme .pug files!)
-  recompileAssetsServer: (_store) => {
-    _helpers.deleteFolderRecursive('./output/assets/') // empty assets folder to be sure that it's fresh compilation
-    module.exports.prepareAssets(_store).then(() => {
-      _helpers.startServer()
-      module.exports.recompileAssets(_store)
+    module.exports.compileOnce(_store).then(() => {
+      console.log('Initial compile completed.')
+      watch([path.normalize('./contents/'), path.normalize(`./theme/${CONFIG.theme}/`)], {recursive: true}, (evt, name) => {
+        const urlArr = name.split(path.sep)
+        console.log(name)
+        // recompile pages only
+        if (name.includes('contents')) {
+          if (name.includes('--page')) {
+            module.exports.getAllContent(_store).then(_store => {
+              module.exports.createOutputFolders(_store).then(() => {
+                module.exports.createOutputPageFiles(_store).then(() => {
+                  module.exports.moveRootFolder().then(() => {
+                    console.log('Pages recompiled.')
+                  })
+                })
+              })
+            })
+          // recompile list entries & list index files
+          } else if (urlArr.includes('list')) {
+            module.exports.getAllContent(_store).then(_store => {
+              module.exports.createOutputFolders(_store).then(() => {
+                module.exports.createOutputListIndexFiles(_store).then(() => {
+                  module.exports.createOutputListEntryFiles(_store).then(() => {
+                    module.exports.moveRootFolder().then(() => {
+                      console.log('List entries recompiled.')
+                    })
+                  })
+                })
+              })
+            })
+          // recompile list index files
+          } else if (name.includes('--list')) {
+            module.exports.getAllContent(_store).then(store => {
+              module.exports.createOutputFolders(_store).then(() => {
+                module.exports.createOutputListIndexFiles(_store).then(() => {
+                  module.exports.moveRootFolder().then(() => {
+                    console.log('List indexes recompiled.')
+                  })
+                })
+              })
+            })
+          }
+        // recompile assets
+        } else if (urlArr.includes('assets')){
+          module.exports.prepareAssets().then(() => {
+            console.log('Static assets recompiled.')
+          })
+        } else {
+          module.exports.compile(_store)
+          console.log('Templates recompiled.')
+        }
+      })
     })
   },
   init: (_store) => {
