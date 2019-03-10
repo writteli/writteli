@@ -12,9 +12,9 @@ Because I can ;) To be honest, I was not satisfied with any available tools and 
 
 Template language is [pug](https://pugjs.org), it supports ES6 JavaScript syntax as your website scripts and you can choose between traditional CSS, Sass or Sass with indented syntax.
 
-4. Why pug and not Vue? I've heard you are a Vue.js fan?
+4. Why pug and not _____?
 
-Yes I am - but this tool is intended to be a STATIC SITE generator, not Single Page one. Besides that, pug is very simple to learn, and still pretty popular.
+Because of keeping it simple. Besides that, pug is very easy to learn, and still pretty popular.
 
 5. How to use it?
 
@@ -34,7 +34,7 @@ Maybe, not yet decided.
 
 9. What's the license?
 
-It's open source MIT. But keeping the `Built with writteli <3` tagline in the footer will be highly appreciated.
+It is and will always be an open source under MIT license. Keeping the `Built with writteli <3` tagline in the footer will be highly appreciated.
 
 10. Is it writteli, Writte.li, or Writteli ?
 
@@ -74,7 +74,7 @@ Compiled website contents will be saved at `/output` folder.
 
 # Author
 
-Author of this tool is lukasz kups. You can reach me via [email](mailto:letstalk@lukaszkups.net) or [twitter](https://twitter.com/lukaszkups).
+Author of this tool is lukasz kups. You can reach me via [email](mailto:hi@lukaszkups.net) or [twitter](https://twitter.com/lukaszkups).
 
 # License
 
