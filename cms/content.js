@@ -380,7 +380,7 @@ module.exports = {
   moveRootFolder: () => {
     return new Promise((resolve, reject) => {
       if (CONFIG.rootFolder) {
-        _helpers.copyFolderContents(`./output/${CONFIG.rootFolder}/`, `./output/`).then(() => {
+        _helpers.copyFolderRecursively(`./output/${CONFIG.rootFolder}/`, `./output/`).then(() => {
           resolve()
         })
       } else {
