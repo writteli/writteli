@@ -54,6 +54,14 @@ It will install all necessary dependencies.
 
 Rename `config--example.js` file to `config.js` (project root folder) or make a file copy with that name (just in case).
 
+# Troubleshooting
+
+On the first `npm i` run, you might have an error relates to `node-sass` library, which is a required dependency and should be installed globally:
+
+```
+npm i -g node-sass
+```
+
 # First run
 
 If you want to see live changes of your website, you can run a local server using command:
